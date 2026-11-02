@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/mohamedkaba4/Site-Reliability-Dashboard.git
+    repoURL: https://github.com/mohamedkaba4/AKS-Infrastructure.git
     targetRevision: main
     path: k8s
     directory:
