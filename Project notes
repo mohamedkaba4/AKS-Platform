@@ -16,7 +16,7 @@ prometheus-node-exporter: reports node-level CPU, memory, disk, network metrics.
 
 Commands
 kubectl apply -f tempo.yaml
-Kubernetes did not “run Tempo.” It created/updated the object described in that file.  k8s/datasources/tempo.yaml is a ConfigMap. So the flow is:
+Kubernetes did not “run Tempo.” It created/updated the object described in that file.  k8s-monitor/datasources/tempo.yaml is a ConfigMap. So the flow is:
 tempo.yaml
    ↓
 kubectl apply
@@ -64,7 +64,7 @@ This configures the Tempo application itself:
 - resources
 - persistence
 Then:
-k8s/datasources/tempo.yaml
+k8s-monitor/datasources/tempo.yaml
 
 This configures Grafana to connect to Tempo as a datasource.
 So:
@@ -72,7 +72,7 @@ helm/tempo/values.yaml
         ↓
 deploys/configures Tempo
 
-k8s/datasources/tempo.yaml
+k8s-monitor/datasources/tempo.yaml
         ↓
 tells Grafana where Tempo is
 Loki is being used to store ingested logs from k8.

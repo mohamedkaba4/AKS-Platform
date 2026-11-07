@@ -1,23 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: sre-observability
+  name: platform-apps
   namespace: argocd
 spec:
   project: default
-
   source:
-    repoURL: https://github.com/mohamedkaba4/AKS-Infrastructure.git
+    repoURL: https://github.com/mohamedkaba4/AKS-Platform.git
     targetRevision: main
-    path: k8s
+    path: argocd/applications
     directory:
       recurse: true
-
   destination:
     server: https://kubernetes.default.svc
-    namespace: observability
-
+    namespace: argocd
   syncPolicy:
     automated:
-      prune: true
+      prune: false
       selfHeal: true
