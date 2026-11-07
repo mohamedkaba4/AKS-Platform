@@ -4,7 +4,7 @@ metadata:
   name: sre-platform-slo
   namespace: observability
   labels:
-    release: sre-monitoring
+    release: monitoring
 spec:
   groups:
     - name: sre-platform-slo-recording

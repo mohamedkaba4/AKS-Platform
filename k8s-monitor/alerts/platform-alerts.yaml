@@ -4,7 +4,7 @@ metadata:
   name: sre-platform-alerts
   namespace: observability
   labels:
-    release: sre-monitoring
+    release: monitoring
 spec:
   groups:
     - name: sre-platform

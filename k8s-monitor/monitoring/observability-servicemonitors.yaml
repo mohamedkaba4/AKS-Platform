@@ -4,7 +4,7 @@ metadata:
   name: alloy
   namespace: observability
   labels:
-    release: sre-monitoring
+    release: monitoring
 spec:
   namespaceSelector:
     matchNames:
@@ -23,7 +23,7 @@ metadata:
   name: loki
   namespace: observability
   labels:
-    release: sre-monitoring
+    release: monitoring
 spec:
   namespaceSelector:
     matchNames:
@@ -43,7 +43,7 @@ metadata:
   name: tempo
   namespace: observability
   labels:
-    release: sre-monitoring
+    release: monitoring
 spec:
   namespaceSelector:
     matchNames:
@@ -63,7 +63,7 @@ metadata:
   name: otel-collector
   namespace: observability
   labels:
-    release: sre-monitoring
+    release: monitoring
 spec:
   namespaceSelector:
     matchNames:
