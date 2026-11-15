@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mavencrest
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/mohamedkaba4/AKS-Platform.git
+    targetRevision: main
+    path: apps/mavencrest
+    helm:
+      releaseName: mavencrest
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: mavencrest
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
