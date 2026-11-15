@@ -91,3 +91,24 @@ Loki — stores/queries logs.
 Loki gateway/cache/canary — supporting Loki components.
 Tempo — stores/queries traces.
 OpenTelemetry Collector — will receive/process traces and send them to Tempo.
+
+Troubleshooting
+Issue: Kubernetes started a new Grafana pod because its Deployment configuration changed.
+The old Grafana pod was still running and holding the Azure Disk.
+The new pod couldn't attach that disk, so it remained stuck.
+Changed the desired rollout strategy to "Recreate" (old pod is removed to reclaim az disk) in Helm, 
+but the live Deployment still showed RollingUpdate.
+Manually patching the Deployment applied Recreate immediately, resolving the disk conflict.
+Argo CD was syncing, but the Deployment was still using RollingUpdate.
+kubectl patch deployment monitoring-grafana -n observability \
+  --type=strategic \
+  -p '{"spec":{"strategy":{"type":"Recreate","rollingUpdate":null}}}'
+
+Argo CD was syncing, but the Deployment was still using RollingUpdate
+Argo CD synced the Helm configuration, but Grafana's live Deployment still showed RollingUpdate.
+Kubernetes had already created a replacement pod, which couldn't attach the Azure Disk while the old pod was running.
+The manual patch set the live Deployment to Recreate, which forced the correct rollout behavior.
+The old pod was terminated, the disk became available, and Grafana recovered. Argo CD then reported Synced / Healthy.
+
+
+
