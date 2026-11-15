@@ -49,7 +49,7 @@ alloy:
       loki.process "pods" {
         stage.static_labels {
           values = {
-            cluster = "aks-sre-dashboard-prod",
+            cluster = "aks-mavencrest-platform",
           }
         }
 
@@ -65,7 +65,7 @@ alloy:
       loki.process "events" {
         stage.static_labels {
           values = {
-            cluster = "aks-sre-dashboard-prod",
+            cluster = "aks-mavencrest-platform",
             source  = "kubernetes-events",
           }
         }

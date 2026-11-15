@@ -27,9 +27,8 @@ resource "azurerm_kubernetes_cluster" "main" {
 
   sku_tier = "Free"
 
-  private_cluster_enabled = true
-  local_account_disabled  = true
-
+  private_cluster_enabled   = true
+  local_account_disabled    = true
   oidc_issuer_enabled       = true
   workload_identity_enabled = true
 

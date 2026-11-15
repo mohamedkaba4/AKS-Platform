@@ -1,4 +1,7 @@
 grafana:
+  deploymentStrategy:
+    type: Recreate
+	
   service:
     type: LoadBalancer
     loadBalancerSourceRanges:
