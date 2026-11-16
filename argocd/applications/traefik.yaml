@@ -13,7 +13,8 @@ spec:
       releaseName: traefik
       values: |
         service:
-          type: LoadBalancer
+          spec:
+            type: LoadBalancer
           annotations:
             service.beta.kubernetes.io/azure-pip-name: publicIP-aks-traefik-prod
         ingressClass:
