@@ -23,7 +23,7 @@ admin:
 imagePullSecret: ghcr-pull
 
 ingress:
-  enabled: false
+  enabled: true
   className: traefik
   storefrontHost: aks.mavencrest.shop
   adminHost: admin-aks.mavencrest.shop
