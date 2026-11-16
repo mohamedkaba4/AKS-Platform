@@ -15,8 +15,8 @@ flowchart TD
     ACR --> AKS[AKS Cluster]
     Argo --> AKS
 
-    AKS --> Mavencrest[Mavencrest Workloads]
-    AKS --> Bank[Bank of Anthos Microservices]
+    AKS --> Mavencrest[Mavencrest Application]
+    AKS --> Bank[Bank of Anthos Microservices Application]
     AKS --> Cilium[Cilium Networking & Policy]
     AKS --> Obs[Prometheus / Grafana]
 ```
