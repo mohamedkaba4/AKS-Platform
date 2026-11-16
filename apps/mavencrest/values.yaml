@@ -21,3 +21,9 @@ admin:
     port: 80
 
 imagePullSecret: ghcr-pull
+
+ingress:
+  enabled: false
+  className: traefik
+  storefrontHost: aks.mavencrest.shop
+  adminHost: admin-aks.mavencrest.shop
