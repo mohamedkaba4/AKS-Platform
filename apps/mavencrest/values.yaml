@@ -27,3 +27,7 @@ ingress:
   className: traefik
   storefrontHost: aks.mavencrest.shop
   adminHost: admin-aks.mavencrest.shop
+  
+  hybrid:
+    enabled: true
+    host: aks.arc.mavencrest.site
